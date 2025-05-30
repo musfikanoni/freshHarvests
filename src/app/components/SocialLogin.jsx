@@ -14,10 +14,10 @@ export default function SocialLogin() {
             <img className='h-7 w-7' src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000" alt="" />
             <p>Google</p>
         </button>
-        {/* <button onClick={() => handleSocialLogin("facebook")} className='btn'>
+        <button onClick={() => handleSocialLogin("facebook")} className='btn'>
             <img className='h-7 w-7' src="https://img.icons8.com/?size=100&id=uLWV5A9vXIPu&format=png&color=000000" alt="" />
             <p>Facebook</p>
-        </button> */}
+        </button>
     </div>
     </div>
   )
