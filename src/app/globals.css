@@ -1,2 +1,24 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.pcolor {
+    --color-primary: #749B3F;
+}
+.banner {
+    background-image: url('../../public/assets/Banner.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.special {
+    background-image: url('../../public/assets/special.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+}
