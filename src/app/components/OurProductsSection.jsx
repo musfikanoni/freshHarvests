@@ -1,6 +1,4 @@
-
 import Link from 'next/link';
-import React from 'react';
 import Category from './Category';
 
 export default async function OurProductsSection() {

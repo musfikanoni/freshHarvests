@@ -1,4 +1,5 @@
-"use client"
+'use client'
+import { usePathname } from 'next/navigation';
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { Badge } from 'antd';
@@ -10,9 +11,15 @@ import Image from 'next/image';
 import Login from '@/app/components/login/Login';
 
 export default function Navbar() {
-  const { data: session } = useSession(); // Get session info
+  const { data: session } = useSession();
 
   const [activeLink, setActiveLink] = useState('');
+
+  const pathname = usePathname();
+  const isHome = pathname === '/';
+
+  const textColor = isHome ? 'text-white' : 'text-[#749B3F]';
+  const signBtn = isHome ? 'text-white' : 'text-black';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,25 +75,26 @@ export default function Navbar() {
           </ul>
         </div>
 
-        <div className="navbar-end hidden lg:flex gap-4 items-center">
-          <div className="flex items-center gap-2">
-            <MdOutlineFavorite className="text-white w-5 h-5" />
-            <p className="text-white font-medium">Favorites</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <Badge count={5}>
-              <FaCartShopping className="text-white w-5 h-5" />
-            </Badge>
-            <p className="text-white font-medium">Carts</p>
-          </div>
+            <div className="navbar-end hidden lg:flex gap-4 items-center">
+            <div className="flex items-center gap-2">
+              <MdOutlineFavorite className={`w-5 h-5 ${textColor}`} />
+              <p className={`font-medium ${signBtn}`}>Favorites</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge count={5}>
+                <FaCartShopping className={`w-5 h-5 ${textColor}`} />
+              </Badge>
+              <p className={`font-medium ${signBtn}`}>Carts</p>
+            </div>
+    
 
           {/* Sign In / Sign Out logic */}
           {session?.user ? (
-            <button onClick={() => signOut()} className="btn bg-transparent shadow-none text-white">
+            <button onClick={() => signOut()} className={`btn bg-transparent shadow-none ${signBtn}`}>
               Sign out
             </button>
           ) : (
-            <button onClick={openModal} className="btn bg-transparent shadow-none text-white">
+            <button onClick={openModal} className={`btn bg-transparent shadow-none ${signBtn}`}>
               Sign in
             </button>
           )}
@@ -108,7 +116,6 @@ export default function Navbar() {
             {navMenu()}
             <li>
               <Link href="/favorites" className="flex items-center gap-1">
-                <MdOutlineFavorite />
                 Favorites
               </Link>
             </li>

@@ -12,7 +12,7 @@ const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const res = await fetch("http://localhost:3000/api/auth/login", {
+        const res = await fetch("https://fresh-lac.vercel.app/api/auth/login", {
             method: "POST",
             body: JSON.stringify(credentials), 
             headers: { "Content-Type": "application/json" },

@@ -20,7 +20,7 @@ export default function Banner() {
                 <Image src={menu} alt='' className='rounded-xl lg:w-[280px] mt-10 lg:h-[120px] h-[80px] w-[170px]' />
             </div>
         </div>
-        <div className="lg:mt-[89px] mt-5 flex items-end float-end">
+        <div className="lg:mt-[89px] mt-1.5 flex items-end float-end">
             <Image src={man} alt='' className='h-650px w-550px' />
         </div>
       </div>

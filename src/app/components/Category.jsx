@@ -1,5 +1,4 @@
 "use client"
-
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -62,16 +61,17 @@ export default function Category() {
     );
   }
 
+
   return (
     <div className="">
 
 
       {/* Tabs */}
-      <div className="flex justify-center gap-6 mt-4 lg:mx-0 mx-10 ">
+      <div className="lg:flex flex-none justify-center gap-6 mt-4 lg:mx-0 mx-10 ">
         {categories.map((cat) => (
           <button
             key={cat.id}
-            className={`py-3 px-6  rounded-xl border ${
+            className={`py-3 px-6 lg:w-28 w-32 lg:mx-0 lg:my-0 mx-2 my-2  rounded-lg border ${
               selectedCategoryId === cat.id
                 ? "bg-[#749B3F] text-white"
                 : "bg-white text-[#A6A6A6] border-[#A6A6A6]"
